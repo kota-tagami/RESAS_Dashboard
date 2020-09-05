@@ -31,14 +31,13 @@ prefs <-
   list.stack() %>>%
   as_tibble() %>% 
   mutate(
-    prefCode = prefCode %>% as.numeric(),
+    prefCode = prefCode %>% as.character(),
     prefName = prefName %>% fct_inorder()
   )
 
 cities_api <- "/api/v1/cities"
 res_cities <- 
   prefs$prefCode %>% 
-  str_c() %>% 
   map(
     ~ resas_api(cities_api, param = list("prefCode" = .)) 
   ) %>% 
@@ -54,19 +53,16 @@ cities <-
     .id = "prefCode"
   ) %>% 
   mutate(
-    prefCode = prefCode %>% as.numeric(),
-    cityCode = cityCode %>% as.numeric(),
     cityName = cityName %>% fct_inorder(),
-    bigCityFlag = bigCityFlag %>% as.numeric(),
     bigCityFlagName = case_when(
-      bigCityFlag == 0 ~ "一般の市区町村",
-      bigCityFlag == 1 ~ "政令指定都市の区",
-      bigCityFlag == 2 ~ "政令指定都市の市",
-      bigCityFlag == 3 ~ "東京都23区",
+      bigCityFlag == "0" ~ "一般の市区町村",
+      bigCityFlag == "1" ~ "政令指定都市の区",
+      bigCityFlag == "2" ~ "政令指定都市の市",
+      bigCityFlag == "3" ~ "東京都23区",
     )
   )
 
 
 prefs_cities <- left_join(prefs, cities, by = "prefCode")
 
-write_excel_csv(prefs_cities, "prefs_cities.csv")
+write_rds(prefs_cities, "prefs_cities/prefs_cities.rds")
