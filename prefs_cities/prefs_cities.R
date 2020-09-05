@@ -2,7 +2,6 @@ library(tidyverse)
 library(httr)
 library(rlist)
 library(pipeR)
-library(listviewer)
 
 endpoint <- "https://opendata.resas-portal.go.jp"
 api_key <- "CcpDn8wG1XR94IUtv1A5BnRmMK84LG5YMUNXxfnz"
