@@ -1,0 +1,12 @@
+name: RESAS_Dashboard
+title: RESAS_Dashboard
+username:
+account: kt-tgm
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3049291
+bundleId: 3758843
+url: https://kt-tgm.shinyapps.io/RESAS_Dashboard/
+when: 1603122041.71324
+asMultiple: FALSE
+asStatic: FALSE
