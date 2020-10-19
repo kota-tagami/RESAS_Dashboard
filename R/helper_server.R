@@ -18,7 +18,7 @@ get_region <- function(city_name){
 }
 
 darktheme <- 
-  theme_minimal(base_family = "Noto Sans JP", base_size = 15) +
+  theme_minimal(base_family = "noto sans jp", base_size = 15) +
   theme(
     legend.position = "top",
     panel.grid.major.x = element_blank(),
