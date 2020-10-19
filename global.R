@@ -13,6 +13,8 @@ source("R/package.R")
 ##>>  Sub-section 2: UI helper  <<##
 ##++++++++++++++++++++++++++++++++++++++++++++++++##
 source("R/helper_ui.R")
+ref <- "出典: RESAS (地域経済分析システム) を加工して作成"
+ver <- "ver: 0.0.0.9001"
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++##
 ##>>  Sub-section 3: Server helper  <<##

@@ -45,6 +45,8 @@ ui_surface_output <- tagList(
 ##++++++++++++++++++++++++++++++++++++++++++++++++##
 ui <- navbarPage(
   "RESAS Dashboard",
+  header = ref,
+  footer = ver,
   theme = shinytheme("darkly"),
   collapsible = T,
   
@@ -61,7 +63,10 @@ ui <- navbarPage(
     "Depth", 
     titlePanel("Dive into the Depth"), 
     h2("Coming soon")
-  )
+  ),
+  
+  #<<  README section  >>#
+  tabPanel("README", includeMarkdown("README.md"))
 )
   
 ##>>--------------END of Section 1--------------<<##
